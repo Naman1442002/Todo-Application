@@ -15,19 +15,25 @@ function EditTodo() {
     });
     const navigate=useNavigate();
     const params = useParams();
-
     useEffect(() => {
-        function fetch() {
-             axios.get('https://shivtodo.onrender.com/todo/' + params.id)
-                .then(response => {setData({description: response.data[0].description, responsibility: response.data[0].responsibility, task: response.data[0].task, priority: response.data[0].priority, complete: response.data[0].complete})
-                    console.log(response.data)}
-                )
-                .catch((err => console.log(err)));
+        // Your code here
+        axios.get('https://shivtodo.onrender.com/todo/' + params.id)
+            .then(response => {
+                setData({
+                    description: response.data[0].description,
+                    responsibility: response.data[0].responsibility,
+                    task: response.data[0].task,
+                    priority: response.data[0].priority,
+                    complete: response.data[0].complete
+                });
+                console.log(response.data);
+            })
+            .catch(err => {
+                console.error("Error fetching data:", err);
+            });
+    }, [params.id]); // Include params.id in the dependency array
+    
 
-        }
-
-        fetch();
-    }, [])
 
     // console.log(data)
 

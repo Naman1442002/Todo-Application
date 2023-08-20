@@ -31,6 +31,7 @@ function CreateTodo() {
 
     const onSubmit = async (e) => {
         e.preventDefault();
+        console.log(todo);
         const data=await axios.post("https://shivtodo.onrender.com/todo/add", todo)
         setTodo({
             "description": "",

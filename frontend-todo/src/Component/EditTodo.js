@@ -3,7 +3,7 @@ import { Form, FloatingLabel } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
+
 
 function EditTodo() {
     const [data, setData] = useState({
@@ -18,7 +18,7 @@ function EditTodo() {
 
     useEffect(() => {
         function fetch() {
-             axios.get('http://localhost:8080/todo/' + params.id)
+             axios.get('https://shivtodo.onrender.com/todo/' + params.id)
                 .then(response => {setData({description: response.data[0].description, responsibility: response.data[0].responsibility, task: response.data[0].task, priority: response.data[0].priority, complete: response.data[0].complete})
                     console.log(response.data)}
                 )
@@ -61,9 +61,9 @@ function EditTodo() {
     const onSubmit = async (e) => {
         e.preventDefault();
             console.log(data);
-          const resp = axios.patch("http://localhost:8080/todo/update/" + params.id , data);
+          const resp = axios.patch("https://shivtodo.onrender.com/todo/update/" + params.id , data);
           console.log(resp);
-            navigate('/CreateTodo');
+            navigate('/');
     }
     return (
         <>

@@ -9,12 +9,12 @@ function Cus_Navbar() {
         <>
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container>
-                <Navbar.Brand href="#home"><img src={logo} alt='Brand-image' className='nav-logo' /></Navbar.Brand>
+                <Navbar.Brand href="#home"><img src={logo} alt='Brand' className='nav-logo' /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav" style={{justifyContent:'flex-end'}}>
                         <Nav className="Link">
                             <Nav.Link href="/TodoList" style={{padding:'1.2rem'}}>Todo List</Nav.Link>
-                            <Nav.Link href="/CreateTodo" style={{padding:'1.2rem'}}>CreateTodo</Nav.Link>
+                            <Nav.Link href="/" style={{padding:'1.2rem'}}>CreateTodo</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

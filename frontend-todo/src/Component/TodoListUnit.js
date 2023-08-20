@@ -15,13 +15,13 @@ function TodoListUnit(props) {
   return (
     <>
         <tr>
-          <td className={(props.complete==true)?'completed':''}>
+          <td className={(props.complete===true)?'completed':''}>
             {props.task}
           </td>
-          <td className={(props.complete==true)?'completed':''}>
+          <td className={(props.complete===true)?'completed':''}>
             {props.responsibility}
           </td>
-          <td className={(props.complete==true)?'completed':''}>
+          <td className={(props.complete===true)?'completed':''}>
             {props.description}
           </td>
           

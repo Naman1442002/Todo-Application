@@ -3,11 +3,11 @@ import axios from 'axios'
 import TodoListUnit from './TodoListUnit';
 function TodoList() {
   const [TodoList, setTodoList] = useState([]);
-  const [err, seterr] = useState('');
+ 
   useEffect(() => {
     const fetch = async () => {
       try {
-        const resp = await axios.get("http://localhost:8080/todo")
+        const resp = await axios.get("https://shivtodo.onrender.com/todo")
         setTodoList(resp.data);
       }
       catch (err) {

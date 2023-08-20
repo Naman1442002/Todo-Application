@@ -12,7 +12,7 @@ app.use(express.json());
 app.use("/todo",router);
 
 
-const client = new MongoClient("mongodb+srv://CodeShort:OhfQZGDbhkvHbmCY@cluster0.8rebagw.mongodb.net/todoDB?retryWrites=true&w=majority");
+const client = new MongoClient(process.env.URL);
 let db;
 
     // Define routes of the app here
@@ -65,10 +65,10 @@ let db;
     // connected to database 
  
     // Starting a server
-    app.listen(8080, () => { console.log("Your are listening to the port 8080!!") });
+    app.listen(process.env.PORT, () => { console.log("Your are listening to the port 8080!!") });
 
 }
-console.log(process.env.port)
+console.log(process.env);
 
 connectToMongoDBStartServer().then(console.log("success")).catch(console.error);
 

@@ -7,7 +7,7 @@ import { FaEdit } from 'react-icons/fa';
 function TodoListUnit(props) {
   const DeleteTodo=async()=>
   {
-    const deleteDoc=  await axios.delete("http://localhost:8080/todo/delete/"+props._id).then(() => window.location.reload());
+    const deleteDoc=  await axios.delete("https://shivtodo.onrender.com/todo/delete/"+props._id).then(() => window.location.reload());
     console.log(deleteDoc);
   }
 
